@@ -13,6 +13,7 @@ import android.view.View;
 import com.hencoder.hencoderpracticedraw4.R;
 
 public class Practice07MatrixTranslateView extends View {
+
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     Bitmap bitmap;
     Point point1 = new Point(200, 200);
