@@ -16,6 +16,7 @@ import android.view.animation.LinearInterpolator;
 import com.hencoder.hencoderpracticedraw4.R;
 
 public class Practice14FlipboardView extends View {
+
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     Bitmap bitmap;
     Camera camera = new Camera();
@@ -73,7 +74,16 @@ public class Practice14FlipboardView extends View {
         int y = centerY - bitmapHeight / 2;
 
         canvas.save();
+        canvas.clipRect(0, 0, getWidth(), centerY);
+        canvas.drawBitmap(bitmap, x, y, paint);
+        canvas.restore();
 
+        canvas.save();
+        if (degree < 90) {
+            canvas.clipRect(0, centerY, getWidth(), centerY + bitmapHeight / 2);
+        } else {
+            canvas.clipRect(0, y, getWidth(), centerY);
+        }
         camera.save();
         camera.rotateX(degree);
         canvas.translate(centerX, centerY);
