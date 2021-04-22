@@ -18,8 +18,8 @@ public class Practice02ClipPathView extends View {
 
     Paint paint = new Paint();
     Bitmap bitmap;
-    Point point1 = new Point(100, 200);
-    Point point2 = new Point(500, 200);
+    Point point1 = new Point(200, 200);
+    Point point2 = new Point(600, 200);
     Path mPath1 = new Path();
     Path mPath2 = new Path();
 
@@ -37,10 +37,10 @@ public class Practice02ClipPathView extends View {
 
     {
         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.maps);
-        mPath1.addCircle(bitmap.getWidth() + point1.x, bitmap.getHeight() + point1.y, bitmap.getWidth() / 2 + 100, Path.Direction.CW);
+        mPath1.addCircle(200 + point1.x, 200 + point1.y, 150, Path.Direction.CW);
 
         mPath2.setFillType(Path.FillType.INVERSE_WINDING);
-        mPath2.addCircle(point2.x + bitmap.getWidth(), point2.y + bitmap.getHeight(), bitmap.getHeight() / 2, Path.Direction.CW);
+        mPath2.addCircle(point2.x + 200, point2.y + 200, 150, Path.Direction.CW);
     }
 
     @Override

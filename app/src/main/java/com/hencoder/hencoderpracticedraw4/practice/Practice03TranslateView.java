@@ -45,7 +45,7 @@ public class Practice03TranslateView extends View {
         canvas.restore();
 
         canvas.save();
-        canvas.translate(-100,0);
+        canvas.translate(200,0);
         canvas.drawBitmap(bitmap, point2.x, point2.y, paint);
         canvas.restore();
     }
